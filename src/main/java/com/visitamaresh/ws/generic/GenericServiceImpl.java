@@ -8,16 +8,16 @@ import org.springframework.transaction.annotation.Transactional;
  
 @Service("genericService")
 @Transactional
-public class GenericServiceImpl implements GenericService<GenericPojo> {
+public class GenericServiceImpl<T> implements GenericService<T> {
  
     @Autowired
     private IGenericDao dao;
      
-    public void save(GenericPojo pojo) {
+    public void save(T pojo) {
         dao.save(pojo);
     }
  
-    public List<GenericPojo> findAll() {
+    public List<T> findAll() {
         return dao.findAll();
     }
  
@@ -25,11 +25,11 @@ public class GenericServiceImpl implements GenericService<GenericPojo> {
         dao.deleteById(id);
     }
  
-    public GenericPojo findById(Long id) {
-        return (GenericPojo)dao.findById(id);
+    public T findById(Long id) {
+        return (T)dao.findById(id);
     }
  
-    public void update(GenericPojo pojo){
+    public void update(T pojo){
         dao.update(pojo);
     }
 }
