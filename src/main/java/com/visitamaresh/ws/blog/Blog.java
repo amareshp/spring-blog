@@ -35,7 +35,7 @@ public class Blog {
     
     public Blog(String title, String createdDate, String blogText) {
         this.title = title;
-        LocalDate date = LocalDate.parse("6/25/2015", DateTimeFormat.forPattern("MM/dd/yyyy"));
+        LocalDate date = LocalDate.parse(createdDate, DateTimeFormat.forPattern("MM/dd/yyyy"));
         this.createdDate = date;
         this.blogText = blogText;
     }
