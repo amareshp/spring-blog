@@ -19,40 +19,34 @@
 <body>
     <div class="container">
         <h2>Write a blog:</h2>
-        <form role="form" action="/spring-blog/entry" method="post">
-        
+        <form:form role="form" action="/spring-blog/blog/save" method="post" modelAttribute="blog">
             <div class="form-group">
-                <label for="title">Blog Title:</label> <input type="text" class="form-control" id="title" name="title"
-                    placeholder="Enter blog title">
+                <label for="title">Blog Title:</label>
+                <form:input class="form-control" id="title" name="title" path="title" placeholder="Enter blog title"></form:input>
             </div>
             <div class="form-group">
-                <label for="createdDate">Created date:</label> 
-                <input type="text" placeholder="show datepicker" class="form-control"
-                    id="createdDate" name="createdDate">
+                <label for="createdDate">Created date:</label>
+                <form:input type="text" placeholder="show datepicker" class="form-control" id="createdDate"
+                    name="createdDate" path="createdDate"
+                ></form:input>
             </div>
-
             <div>
                 <p>
                     <label for="blogText">Blog text</label>
-                    <textarea cols="80" id="blogText" name="blogText" rows="10"></textarea>
+                    <form:textarea rows="10" cols="80" id="blogText" name="blogText" path="blogText"></form:textarea>
                 </p>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        </form:form>
     </div>
-    <script type="text/javascript">
-					CKEDITOR.replace('blogText');
-				</script>
     <script type="text/javascript">
 					// When the document is ready
 					$(document).ready(function() {
-
+						CKEDITOR.replace('blogText');
 						$('#createdDate').datepicker({
 							format : "mm/dd/yyyy"
 						});
-
 					});
 				</script>
-
 </body>
 </html>
