@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class GalleryController {
     
     @RequestMapping(value = "/album1", method = RequestMethod.GET)
-    public String showAlbum() {
+    public String showAlbum1() {
         return "gallery/album1";
     }
 
+    @RequestMapping(value = "/album2", method = RequestMethod.GET)
+    public String showAlbum2() {
+        return "gallery/album2";
+    }
+    
 }
