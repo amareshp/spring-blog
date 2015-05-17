@@ -38,6 +38,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/gallery/**").addResourceLocations("/gallery/");
         registry.addResourceHandler("/images/**").addResourceLocations("file:/Users/apatta2/MyData/pics/");
     }
 
