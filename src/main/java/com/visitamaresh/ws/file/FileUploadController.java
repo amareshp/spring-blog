@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.visitamaresh.ws.util.RandomUtil;
+import com.visitamaresh.ws.util.TimeUtil;
+
 @Controller
 @PropertySource(value = { "classpath:application.properties" })
 public class FileUploadController {
@@ -24,18 +27,21 @@ public class FileUploadController {
     
     @RequestMapping(value="/upload", method=RequestMethod.GET)
     public String uploadForm(Model model) {
-        return "file/upload";
+        return "file/upload2";
     }
 
+    //@RequestParam("name") String name
     @RequestMapping(value="/upload", method=RequestMethod.POST)
-    public @ResponseBody String handleFileUpload(@RequestParam("name") String name,
-            @RequestParam("file") MultipartFile file){
+    public @ResponseBody String handleFileUpload(@RequestParam("file") MultipartFile file){
         String uploadFilePath = environment.getProperty("upload.path");
+        String name = file.getName();
         
         if (!file.isEmpty()) {
             try {
                 byte[] bytes = file.getBytes();
-                String filePath = uploadFilePath + name;
+                String fileName = TimeUtil.getDateTimePart("yyyy-MM-dd-HH-mm-ss-SSS") + "-" + RandomUtil.randLong(5) + ".jpg";
+                //String filePath = uploadFilePath + fileName;
+                String filePath = uploadFilePath + fileName;
                 File yourFile = new File(filePath);
                 if(!yourFile.exists()) {
                     yourFile.createNewFile();
