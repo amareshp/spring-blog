@@ -14,12 +14,12 @@
     <div id="sliderFrame">
         <div id="slider">
             <a href="http://www.menucool.com/javascript-image-slider" target="_blank">
-                <img src="/spring-blog/gallery/images/image-slider-1.jpg" alt="Welcome to Menucool.com" />
+                <img src="images/image-slider-1.jpg" alt="Welcome to Menucool.com" />
             </a>
-            <img src="/spring-blog/gallery/images/image-slider-2.jpg" alt="" />
-            <img src="/spring-blog/gallery/images/image-slider-3.jpg" alt="Pure Javascript. No jQuery. No flash." />
-            <img src="/spring-blog/gallery/images/image-slider-4.jpg" alt="#htmlcaption" />
-            <img src="/spring-blog/gallery/images/image-slider-5.jpg" />
+            <img src="images/image-slider-2.jpg" alt="" />
+            <img src="images/image-slider-3.jpg" alt="Pure Javascript. No jQuery. No flash." />
+            <img src="images/image-slider-4.jpg" alt="#htmlcaption" />
+            <img src="images/image-slider-5.jpg" />
         </div>
         <div id="htmlcaption" style="display: none;">
             <em>HTML</em> caption. Link to <a href="http://www.google.com/">Google</a>.
