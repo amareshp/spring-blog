@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class GalleryController {
     private static Logger logger = Logger.getLogger(new Exception().getStackTrace()[0].getClassName());
 
-    @RequestMapping(value="/list", method=RequestMethod.GET)
+    @RequestMapping(value = {"/", "/list"}, method=RequestMethod.GET)
     public String listAll(Model model) {
         return "gallery/albums";
     }

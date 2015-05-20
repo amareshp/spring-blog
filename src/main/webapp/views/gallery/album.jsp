@@ -7,21 +7,38 @@
 <link href="/spring-blog/gallery/themes/1/js-image-slider.css" rel="stylesheet" type="text/css" />
 <script src="/spring-blog/gallery/themes/1/js-image-slider.js" type="text/javascript"></script>
 <link href="/spring-blog/gallery/generic.css" rel="stylesheet" type="text/css" />
+
+<!-- bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <div class="div1">
         <h2>Demo 1 - Menucool Image Slider</h2>
         <p>
-            Demos: <a href="demo1.html" class="current">1</a><a href="demo2.html">2</a><a href="demo3.html">3</a><a
-                href="demo4.html"
-            >4</a> <a href="demo5.html">5</a><a href="demo6.html">6</a><a href="demo7.html">7</a><a href="demo8.html">8</a>
+            Demos: 
+            <a href="/spring-blog/gallery/demo1.html" class="current">1</a>
+            <a href="/spring-blog/gallery/demo2.html">2</a>
+            <a href="/spring-blog/gallery/demo3.html">3</a>
+            <a href="/spring-blog/gallery/demo4.html">4</a>
+            <a href="/spring-blog/gallery/demo5.html">5</a>
+            <a href="/spring-blog/gallery/demo6.html">6</a>
+            <a href="/spring-blog/gallery/demo7.html">7</a>
+            <a href="/spring-blog/gallery/demo8.html">8</a>
         </p>
     </div>
     <div id="sliderFrame">
         <div id="slider">
             <%
                 String dirName = request.getAttribute("dirName").toString();
-                String file = application.getRealPath("/gallery/" + dirName);
+                String file = application.getRealPath("/gallery/albums/" + dirName);
 
                 File f = new File(file);
                 String[] fileNames = f.list();
@@ -31,7 +48,7 @@
                 for (int i = 0; i < fileObjects.length; i++) {
                     if (!fileObjects[i].isDirectory()) {
             %>
-            <img src="/spring-blog/gallery/<%=dirName%>/<%=fileNames[i]%>" alt="" />
+            <img src="/spring-blog/gallery/albums/<%=dirName%>/<%=fileNames[i]%>" alt="" />
             <%
                 }
                 }
