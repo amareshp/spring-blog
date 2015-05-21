@@ -4,8 +4,9 @@
 
 <head>
 <title>Demo 1 - Menucool Image Slider</title>
-<link href="/spring-blog/gallery/themes/1/js-image-slider.css" rel="stylesheet" type="text/css" />
-<script src="/spring-blog/gallery/themes/1/js-image-slider.js" type="text/javascript"></script>
+<!-- 1, 5, 6, 7, 8 -->
+<link href="/spring-blog/gallery/themes/7/js-image-slider.css" rel="stylesheet" type="text/css" />
+<script src="/spring-blog/gallery/themes/7/js-image-slider.js" type="text/javascript"></script>
 <link href="/spring-blog/gallery/generic.css" rel="stylesheet" type="text/css" />
 
 <!-- bootstrap -->
