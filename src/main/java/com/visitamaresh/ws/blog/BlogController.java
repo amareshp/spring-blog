@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,6 +31,13 @@ public class BlogController {
         List<Blog> blogs = blogService.findAllBlogs();
         model.addAttribute("blogs", blogs);
         return "blog/list";
+    }
+
+    @RequestMapping(value="/id/{id}", method=RequestMethod.GET)
+    public String blog(@PathVariable("id") Integer id, Model model) {
+        Blog blog = blogService.findById(id);
+        model.addAttribute("blog", blog);
+        return "blog/blog";
     }
     
     @RequestMapping(value="/entry", method=RequestMethod.GET)

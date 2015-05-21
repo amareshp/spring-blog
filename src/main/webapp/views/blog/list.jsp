@@ -30,10 +30,7 @@
             -->
             <table class="table table-bordered">
                 <tr>
-                    <td>${blog.id}.&nbsp;&nbsp;${blog.title}</td>
-                </tr>
-                <tr>
-                    <td>${blog.blogText}</td>
+                    <td><a href="/spring-blog/blog/id/${blog.id}">${blog.title}</a></td>
                 </tr>
             </table>
         </c:forEach>

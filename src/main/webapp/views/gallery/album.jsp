@@ -48,7 +48,7 @@
                 for (int i = 0; i < fileObjects.length; i++) {
                     if (!fileObjects[i].isDirectory()) {
             %>
-            <img src="/spring-blog/gallery/albums/<%=dirName%>/<%=fileNames[i]%>" alt="" />
+            <img src="/spring-blog/gallery/albums/<%=dirName%>/<%=fileNames[i]%>" alt=""  />
             <%
                 }
                 }
