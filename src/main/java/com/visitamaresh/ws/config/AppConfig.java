@@ -40,6 +40,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
         registry.addResourceHandler("/gallery/**").addResourceLocations("/gallery/");
+        registry.addResourceHandler("/gallery2/**").addResourceLocations("/gallery2/");
         registry.addResourceHandler("/images/**").addResourceLocations("file:/Users/apatta2/MyData/pics/");
         registry.addResourceHandler("/home/**").addResourceLocations("/home/");
     }
